@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  debut_date: MyString
+  fandom_name: MyString
+  instagram: MyString
+  twitter: MyString
+  youtube: MyString
+  group_img: MyString
+  music_video: MyString
+  live_video: MyString
+  dance_video: MyString
+
+two:
+  name: MyString
+  debut_date: MyString
+  fandom_name: MyString
+  instagram: MyString
+  twitter: MyString
+  youtube: MyString
+  group_img: MyString
+  music_video: MyString
+  live_video: MyString
+  dance_video: MyString

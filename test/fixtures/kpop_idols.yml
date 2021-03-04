@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stage_name: MyString
+  birth_name: MyString
+  birthday: MyString
+  birth_place: MyString
+  height: MyString
+  position: MyString
+  nickname: MyString
+  famous_quote: MyString
+  member_img: MyString
+  fan_cam: MyString
+  group_id: 1
+
+two:
+  stage_name: MyString
+  birth_name: MyString
+  birthday: MyString
+  birth_place: MyString
+  height: MyString
+  position: MyString
+  nickname: MyString
+  famous_quote: MyString
+  member_img: MyString
+  fan_cam: MyString
+  group_id: 1
