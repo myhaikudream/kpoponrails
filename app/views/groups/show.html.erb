@@ -1,2 +1,11 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<h1><%= @group.name %></h1><br>
+<br>
+<h2> Fandom Name: <%= @group.fandom_name %> </h2>
+<h2> Debut Date: <%= @group.debut_date %> </h2>
+<br>
+<br>
+<% @group.kpopidols.each do |idol| %>
+<p><%= link_to idol.stage_name, kpopidol_path(idol.id) %> </p>
+
+
+<% end %> 

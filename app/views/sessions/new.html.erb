@@ -1,0 +1,17 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<h1 style="color: #501B1D; text-align:center">Log in:</h1>
+<div style="color: #83677B; text-align:center">
+<%= form_for(@user, url: '/login') do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "Log In" %>
+<% end %>
+</div>
+</div>

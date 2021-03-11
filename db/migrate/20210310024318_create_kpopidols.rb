@@ -1,6 +1,6 @@
-class CreateKpopIdols < ActiveRecord::Migration[6.1]
+class CreateKpopidols < ActiveRecord::Migration[6.1]
   def change
-    create_table :kpop_idols do |t|
+    create_table :kpopidols do |t|
       t.string :stage_name
       t.string :birth_name
       t.string :birthday
@@ -13,7 +13,7 @@ class CreateKpopIdols < ActiveRecord::Migration[6.1]
       t.string :fan_cam
       t.integer :group_id
 
-      t.timestamps
+      
     end
   end
 end

@@ -1,0 +1,7 @@
+<h1> Idols </h1>
+
+<% @kpopidols.each do |idol| %>
+<p><%= link_to idol.stage_name, kpopidol_path(idol.id) %> </p>
+
+
+<% end %> 

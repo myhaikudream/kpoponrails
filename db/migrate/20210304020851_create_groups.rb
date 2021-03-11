@@ -12,7 +12,7 @@ class CreateGroups < ActiveRecord::Migration[6.1]
       t.string :music_video
       t.string :live_video
       t.string :dance_video
-      t.references :may_like 
+      t.references :recommendation, foreign_key: { to_table: :groups }
 
     end
   end

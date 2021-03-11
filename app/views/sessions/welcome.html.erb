@@ -1,0 +1,13 @@
+<h1>Welcome to the Male Kpop Bias Lister!!!</h1>
+<h3>Never forget information about your bias again!</h3>
+
+  <div>
+  <div><%= link_to "Log In", login_path %></div>
+  OR<br>
+<%= button_to "Log in with Facebook", "/auth/facebook" %><br>
+OR 
+  <div><%= link_to "Sign Up", signup_path %></div>
+  <% if logged_in? %>
+  <%= link_to "Log Out", logout_path %>
+  <% end %>
+  

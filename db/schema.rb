@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_071521) do
+ActiveRecord::Schema.define(version: 2021_03_10_024318) do
 
   create_table "biaslists", force: :cascade do |t|
     t.integer "kpopidol_id"
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 2021_03_04_071521) do
     t.string "music_video"
     t.string "live_video"
     t.string "dance_video"
-    t.integer "may_like_id"
-    t.index ["may_like_id"], name: "index_groups_on_may_like_id"
+    t.integer "recommendation_id"
+    t.index ["recommendation_id"], name: "index_groups_on_recommendation_id"
   end
 
-  create_table "kpop_idols", force: :cascade do |t|
+  create_table "kpopidols", force: :cascade do |t|
     t.string "stage_name"
     t.string "birth_name"
     t.string "birthday"
@@ -51,8 +51,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_071521) do
     t.string "member_img"
     t.string "fan_cam"
     t.integer "group_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,4 +60,5 @@ ActiveRecord::Schema.define(version: 2021_03_04_071521) do
     t.string "provider"
   end
 
+  add_foreign_key "groups", "groups", column: "recommendation_id"
 end

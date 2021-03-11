@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
-     #before_action :redirect_if_logged_in, except: [:show]
+     before_action :redirect_if_logged_in, except: [:show]
 
-     def new
+    def new
       @user = User.new
-  end
+      
+    end
   
   def index
       @users = User.all 
   end
 
   def create
-      @user = User.new(user_params)
+      @user = User.new
       if @user.save
           session[:user_id] = @user.id
           redirect_to user_path(@user)
@@ -42,6 +43,6 @@ class UsersController < ApplicationController
   def destroy
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to '/login'
+      redirect_to login_path
   end
 end

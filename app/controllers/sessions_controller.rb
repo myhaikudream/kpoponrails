@@ -1,17 +1,13 @@
 class SessionsController < ApplicationController
 
-    before_action :redirect_if_logged_in, except: [:destroy]
+    before_action :redirect_if_logged_in
 
     def welcome
     end
 
     def new
         @user = User.new
-    end
-
-    def destroy 
-        session.delete(:user_id)
-        redirect_to '/login'
+        redirect_to groups_path
     end
 
     def create 
@@ -21,7 +17,7 @@ class SessionsController < ApplicationController
             redirect_to user_path(u)
         else
             flash[:message] = "This account cannot be found! Please try again."
-            redirect_to '/login'
+            redirect_to login_path
         end
     end
 
@@ -41,6 +37,11 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end
        
+    end
+
+    def destroy 
+        session.delete(:user_id)
+        redirect_to login_path
     end
 
     
