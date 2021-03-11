@@ -12,6 +12,10 @@ class Group < ApplicationRecord
         self.where({ name: ["Stray Kids", "Monsta X", "BigBang", "NCT 127", "Got7"]})
     end
 
+    def self.recommended_groups
+        self.referalls
+    end
+
     
 
    

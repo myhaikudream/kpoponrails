@@ -2,10 +2,24 @@
 <br>
 <h2> Fandom Name: <%= @group.fandom_name %> </h2>
 <h2> Debut Date: <%= @group.debut_date %> </h2>
+<h2> <%= link_to "Instagram", @group.instagram %>
+<h2> <%= link_to "Twitter", @group.twitter %>
+<h2> <%= link_to "Youtube", @group.youtube %>
+<br>
+<br>
+<iframe width="560" height="315" src="<%= @group.live_video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+
 <br>
 <br>
 <% @group.kpopidols.each do |idol| %>
 <p><%= link_to idol.stage_name, kpopidol_path(idol.id) %> </p>
+<% end %> 
 
 
+
+<h2> Recommended Music: </h2>
+<% @group.referalls.each do |refer| %>
+
+<p><%= link_to refer.name, group_path(refer.id) %> </p>
 <% end %> 

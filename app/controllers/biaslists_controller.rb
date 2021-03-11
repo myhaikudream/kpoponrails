@@ -19,10 +19,10 @@ class BiaslistsController < ApplicationController
   end
 
   def new 
-    @biaslist = Biaslist.new(params)
+    @biaslist = Biaslist.new(params[:idol_id])
       @biaslist.user_id = session[:user_id]
       @biaslist.save
-      redirect_to biaslists_path
+      
   end
 
   def edit
@@ -31,30 +31,27 @@ class BiaslistsController < ApplicationController
       @biaslist = Biaslist.find(params[:id])
       if  @biaslist.user_id == current_user.id 
           render :edit
-       else  
-           redirect_to biaslists_path
-       end
 
       else 
       redirect_to login_path
       end
     end 
+  end
+
   
 
   def update
     @biaslist = Biaslist.find(params[:id])
       @biaslist.update(notes: params[:notes])
-      redirect_to biaslists_path
+      
   end
 
   def delete
     @biaslist = Biaslist.find(params[:id])
     if  @biaslist.user_id == current_user.id 
         @biaslist.destroy 
-        redirect_to biaslists_path
-     else  
-         redirect_to biaslists_path
-     end
+    end
+    
   end
 
 end

@@ -14,6 +14,10 @@ class GroupsController < ApplicationController
 
   end
 
+  def recommended_groups
+    @groups = Group.recommended_groups
+  end
+
   
     
 
