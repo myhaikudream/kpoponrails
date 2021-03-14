@@ -1,0 +1,13 @@
+<%= form_for biaslist, url:url do |f| %>
+  <div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div>
+    <%= f.hidden_field :kpopidol_id, :value => kpopidol.id %>
+  </div>
+  <div>
+    <%= f.label :note %>
+    <%= f.text_area :notes %>
+  </div>
+  <%= f.submit %>
+<% end %>

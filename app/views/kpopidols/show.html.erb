@@ -1,5 +1,8 @@
 <h1> <%= @kpopidol.stage_name %> </h1>
 <br>
+
+<a><img alt="meme" src="<%= @kpopidol.member_img %>"
+width="450" height="450"></a>
 <br>
 <h4> Birth Name: <%= @kpopidol.birth_name %> </h4>
 <h4> Birthday: <%= @kpopidol.birthday %> </h4>
@@ -10,10 +13,12 @@
 <h4> Famous Quote: <%= @kpopidol.famous_quote %> </h4>
 <br>
 <br>
+<iframe width="560" height="315" src="<%= @kpopidol.fan_cam %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <br>
 <br>
 
-<a href="/kpopidols/<%= @kpopidol.id %>/biaslists/new">Add Bias</a>
+<%= button_to "Add Bias", kpopidol_biaslists_path(@kpopidol.id) %>
 
 
 

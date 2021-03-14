@@ -18,11 +18,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_024318) do
     t.string "notes"
   end
 
-  create_table "checkout_lists", force: :cascade do |t|
-    t.integer "group_id"
-    t.integer "user_id"
-  end
-
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "group_name"

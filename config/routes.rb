@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
     root to: 'sessions#welcome'
-  
+
+    resources :users, only: [:new, :create, :homepage, :profile]
+
     
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
@@ -11,19 +13,20 @@ Rails.application.routes.draw do
     post '/signup' => 'users#create'
    
 
-    resources :groups, only: [:index, :show] do
-      resources :checkout_lists
-    end
+    get '/biaslist', to: 'biaslists#mybias', as: "my_bias"
 
+    match '/auth/:google_oauth2/callback' => 'sessions#google', via: [:get,:post]
+
+   
+
+    resources :groups, only: [:index, :show] 
    
     resources :kpopidols, only: [:index, :show] do
       resources :biaslists
     end
 
-    resources :biaslists
-    resources :checkout_lists
-    resources :users
-
+    
+    
     
 
     
@@ -32,7 +35,7 @@ Rails.application.routes.draw do
 
 
 
-    match '*path' => 'application_controller#fallback', via: [:all] 
+    
    
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

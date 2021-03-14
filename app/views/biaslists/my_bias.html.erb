@@ -1,0 +1,9 @@
+
+<h3>List of Male Bias Idols</h3>
+
+<% @biaslist.each do |b| %>
+<h2><%= link_to b.kpopidol.stage_name, kpopidol_biaslist_path(b.kpopidol.id, b.id) %> </h2>
+
+
+
+<% end %>

@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
     has_many :kpopidols
-    has_many :checkout_lists
+
     has_many :users, through: :checkout_lists
 
     has_many :referalls, class_name: "Group",

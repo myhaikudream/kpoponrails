@@ -6,7 +6,7 @@
 <div class="container">
   <h1 style="color: #2E1114; text-align:center">Sign Up!</h1>
   <div style="color: #2E1114; text-align:center">
-    <%= form_for @user do |f| %>
+    <%= form_for @user, url: signup_path  do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %> <br>
     <%= f.label :password %>
