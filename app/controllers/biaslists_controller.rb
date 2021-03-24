@@ -1,7 +1,10 @@
 class BiaslistsController < ApplicationController
 
+  before_action :set_biaslist, only: [:show, :edit, :update, :destroy]
+  before_action :set_kpopidol, only: [:new, :show, :edit ]
+
   def new
-    @kpopidol = Kpopidol.find(params[:kpopidol_id])
+   
     @biaslist = @kpopidol.biaslists.build
     render :my_bias
 
@@ -18,8 +21,7 @@ class BiaslistsController < ApplicationController
 
   def show
     if logged_in?
-      @kpopidol = Kpopidol.find(params[:kpopidol_id])
-      @biaslist = Biaslist.find(params[:id])
+     
       render :show
     else
       redirect_to login_path
@@ -35,8 +37,7 @@ class BiaslistsController < ApplicationController
 
   def edit
     if logged_in?
-      @kpopidol = Kpopidol.find(params[:kpopidol_id])
-      @biaslist = Biaslist.find(params[:id])
+     
       if  @biaslist.user_id == current_user.id 
           render :edit
 
@@ -49,13 +50,13 @@ class BiaslistsController < ApplicationController
   
 
   def update
-    @biaslist = Biaslist.find(params[:id])
+  
       @biaslist.update(notes: params[:biaslist][:notes])
       redirect_to my_bias_path
   end
 
   def destroy
-    @biaslist = Biaslist.find(params[:id])
+    
     if  @biaslist.user_id == current_user.id
         @biaslist.destroy
         
@@ -69,6 +70,12 @@ class BiaslistsController < ApplicationController
    params.require(:biaslist).permit(:note,:user_id,:kpopidol_id)
   end 
 
+  def set_biaslist
+    @biaslist = Biaslist.find(params[:id])
+  end
+
+  def set_kpopidol
+    @kpopidol = Kpopidol.find(params[:kpopidol_id])
+  end
+
 end
-
-
