@@ -27,7 +27,7 @@ When it has confirmed you are connected to a local host, please visit your web b
 
 You may now create an account, login with your own credentials or with the 'login with google' option, and start exploring the world of KPop 
 
-##Resources
+## Resources
 A LOT of the information about the Kpop Groups and Idols was collected using [KpopIdols](https://kprofiles.com/) as they have all the information you need about every group and idol. 
 
-Enjoy!
+### Enjoy!
