@@ -18,7 +18,7 @@ width="450" height="450"></a>
 <br>
 <br>
 
-<%= button_to "Add Bias", kpopidol_biaslists_path(@kpopidol.id) %>
+<%= button_to "Add Bias", new_kpopidol_biaslist_path(@kpopidol.id), method: "get" %>
 
 
 

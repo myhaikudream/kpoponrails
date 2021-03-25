@@ -2,14 +2,12 @@
 
 <h2>Profile: <%= link_to @biaslist.kpopidol.stage_name, kpopidol_path(@biaslist.kpopidol.id) %> </h2>
 
-<% if @biaslist.notes%>
-<h2> Notes: <%= @biaslist.notes %>
+<h2> Nickname: <%= @biaslist.notes %>
 
-<% else %>
+
 <br>
-<p><%= link_to "Add a note", edit_kpopidol_biaslist_path(@biaslist.kpopidol.id, @biaslist.id) %> </p>
-<% end %>
-<p><%= button_to "Remove", kpopidol_biaslist_path(@biaslist.kpopidol.id, @biaslist.id), method: 'delete' %> </p>
-  </form> 
+<p><%= button_to "Edit Nickname", edit_kpopidol_biaslist_path(@biaslist.kpopidol.id, @biaslist.id), method: "get" %> </p>
 
+<p><%= button_to "Remove", kpopidol_biaslist_path(@biaslist.kpopidol.id, @biaslist.id), method: 'delete' %> </p>
+ 
 

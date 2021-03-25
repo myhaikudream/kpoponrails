@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
     def new
         @user = User.new
+        
     end
 
     def create 
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
         if !@user
           @error = "Are you sure that's your username?"
           render :new
-        elsif !user.authenticate(params[:password])
+        elsif !@user.authenticate(params[:password])
           @error =  "Password no matchy records"
           render :new  
         else 

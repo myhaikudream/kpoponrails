@@ -6,7 +6,7 @@ class BiaslistsController < ApplicationController
   def new
    
     @biaslist = @kpopidol.biaslists.build
-    render :my_bias
+     render :new
 
   end
 
@@ -29,8 +29,8 @@ class BiaslistsController < ApplicationController
   end
 
   def create
-    @biaslist = Biaslist.new(kpopidol_id: params[:kpopidol_id])
-      @biaslist.user_id = session[:user_id]
+   
+    @biaslist = Biaslist.new(bias_params)
       @biaslist.save
       redirect_to my_bias_path      
   end
@@ -66,8 +66,8 @@ class BiaslistsController < ApplicationController
   end
 
   private 
-  def review_params
-   params.require(:biaslist).permit(:note,:user_id,:kpopidol_id)
+  def bias_params
+   params.require(:biaslist).permit(:notes,:user_id,:kpopidol_id)
   end 
 
   def set_biaslist
